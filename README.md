@@ -1,5 +1,8 @@
 # rtl-modeling
-This project illustrate the differences between PyRTL and PyMTL in terms of modeling
+This project illustrate the differences among:
+- PyRTL 
+- PyMTL
+- (Mamba)
 
 ## Software Prerequisite
 
@@ -18,5 +21,9 @@ This project illustrate the differences between PyRTL and PyMTL in terms of mode
 Our test includes 2 types of modules:
 1. A simple FIFO module to evaluate the usability
 2. A recursive module
+
+We have verilog code for these modules. 
+The first step we take is to convert these modules back to Python models.
+We then evaluate these python modules.
 
 The metrics we are using are not clear at this point.
