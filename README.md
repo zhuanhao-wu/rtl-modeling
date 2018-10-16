@@ -27,3 +27,17 @@ The first step we take is to convert these modules back to Python models.
 We then evaluate these python modules.
 
 The metrics we are using are not clear at this point.
+
+---
+
+I will record how these 2 frameworks feel when I am developing the modules
+
+# Documenttation
+1. PyMTL
+- The documentation for PyMTL is quite sparse
+- we need to be explicit about using builtins (instead of using `def` blocks).
+- We can also use `Wire` in synchronous clock
+- PyMTL has not been updated since half years ago
+
+2. PyRTL
+- PyRTL is currently actively developed
