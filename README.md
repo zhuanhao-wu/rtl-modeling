@@ -32,7 +32,7 @@ The metrics we are using are not clear at this point.
 
 I will record how these 2 frameworks feel when I am developing the modules
 
-# Documenttation
+# Comparison
 1. PyMTL
 - The documentation for PyMTL is quite sparse
 - we need to be explicit about using builtins (instead of using `def` blocks).
@@ -41,3 +41,10 @@ I will record how these 2 frameworks feel when I am developing the modules
 
 2. PyRTL
 - PyRTL is currently actively developed
+- PyRTL has visualization for trace (e.g. used WaveDrom for waveform in jupyternotebook)
+
+# Grammar
+
+# Infrastructure
+
+# Translation
