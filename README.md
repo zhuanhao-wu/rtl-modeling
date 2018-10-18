@@ -34,9 +34,7 @@ I will record how these 2 frameworks feel when I am developing the modules
 
 # Comparison
 1. PyMTL
-- we need to be explicit about using builtins (instead of using `def` blocks).
-- We can also use `Wire` in synchronous clock
-- PyMTL has not been updated since half years ago
+- PyMTL has not been updated since half a year ago
 
 2. PyRTL
 - PyRTL is being _actively_ updated
@@ -92,15 +90,15 @@ All wires etc are organized in a namespace that pyrtl manages (no clear concept 
 Both framework can generate synthsizable code.
 
 1. PyMTL
-- Not mentioned
+- Support RTL model with tutorial for ASIC and HLS flow
 
 2. PyRTL
 - Support area/timing estimation in Python (ASIC). But we should rely on the FPGA toolchain anyway.
 - Support synthesis to simpler nets etc, provide some degrees of optimization.
-- Proven ability to be used with Zynq board (with papers)
+- Proven ability to be used with Zynq board (with [paper](https://www.cs.ucsb.edu/~sherwood/pubs/FPL-17-pyrtl.pdf))
 
 # Verilog Model
-- Both support import from / export to verilog
+- Both library support import from / export to verilog
 
 ## Import
 1. PyMTL requires special wrapper and certain naming convention in verilog code
@@ -110,10 +108,10 @@ Both framework can generate synthsizable code.
 ## Export
 1. PyMTL
 - PyMTL generated code is close to Python Code (with comment etc). PyMTL utilizes python syntax tree to generate verilog code
-- PyMTL generated verilog code is more readable with less efforts.
+- PyMTL generated verilog code is more readable (can be mapped from python code).
 
 2. PyRTL
-- PyRTL generated code includes temporary variables etc
+- PyRTL generated code includes many temporary variables etc
 - PyRTL generated code might be less relevant to python code
 
 - PyRTL/PyMTL does not has support for hierachical model (i.e. one output file including all the modules)
@@ -133,7 +131,7 @@ Both framework can generate synthsizable code.
 - PyMTL has very limited documentation, but the library is small
 - PyMTL has basic tutorials, tutorials on HLS flow and ASIC flow (I have not read the HLS flow and ASIC flow)
 
-2. PyRTL ✅
+2. PyRTL 
 - The PyRTL documentation seems to be more comprehensive and formal
 
 # Installation
