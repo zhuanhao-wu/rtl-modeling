@@ -124,6 +124,7 @@ Both framework can generate synthsizable code.
 2. PyRTL
 - Self-written simulator
 - C simulation not supported by the main repo, discussion here: https://github.com/UCSBarchlab/PyRTL/issues/145
+- Provide JIT fast simulation
 - Only simulators and some simple functions are provided
 
 # Documentation
