@@ -1,0 +1,194 @@
+// Generated automatically via PyRTL
+// As one initial test of synthesis, map to FPGA with:
+//   yosys -p "synth_xilinx -top toplevel" thisfile.v
+
+module toplevel(wr_en_i, rd_data_o, rd_en_i, one_left, full_o, reset, empty_o, wr_data_i, clk);
+    input wr_en_i;
+    input reset;
+    input rd_en_i;
+    input[31:0] wr_data_i;
+    input clk;
+    output full_o;
+    output[31:0] rd_data_o;
+    output empty_o;
+    output one_left;
+
+    reg[2:0] write_poitner;
+    reg[2:0] write_poitner;
+    wire full_or_empty;
+    wire tmp15;
+    wire tmp35;
+    wire[2:0] tmp24;
+    wire tmp12;
+    wire const_0_0;
+    wire tmp7;
+    wire tmp36;
+    wire[1:0] tmp38;
+    wire tmp16;
+    wire[1:0] tmp39;
+    wire[2:0] tmp34;
+    wire[1:0] tmp44;
+    wire[1:0] waddr;
+    wire[1:0] tmp52;
+    wire[3:0] tmp19;
+    wire[3:0] tmp27;
+    wire tmp5;
+    wire[3:0] tmp22;
+    wire[2:0] tmp45;
+    wire const_4_0;
+    wire[3:0] tmp23;
+    wire[2:0] const_5_0;
+    wire tmp21;
+    wire[2:0] tmp6;
+    wire tmp49;
+    wire[2:0] tmp2;
+    wire tmp8;
+    wire[31:0] const_14_0;
+    wire[31:0] tmp54;
+    wire[1:0] tmp0;
+    wire tmp18;
+    wire tmp42;
+    wire[2:0] tmp1;
+    wire[3:0] tmp33;
+    wire const_9_0;
+    wire tmp43;
+    wire const_3_0;
+    wire const_1_0;
+    wire[3:0] tmp20;
+    wire[31:0] const_13_0;
+    wire[1:0] tmp25;
+    wire[3:0] tmp17;
+    wire tmp40;
+    wire[3:0] tmp46;
+    wire tmp28;
+    wire tmp3;
+    wire[1:0] tmp53;
+    wire[3:0] tmp29;
+    wire[2:0] tmp26;
+    wire const_7_0;
+    wire tmp14;
+    wire[3:0] tmp30;
+    wire const_8_0;
+    reg[31:0] tmp50;
+    wire const_12_0;
+    wire tmp13;
+    wire tmp4;
+    wire const_10_1;
+    wire tmp31;
+    wire tmp47;
+    wire tmp37;
+    wire[31:0] tmp51;
+    wire tmp11;
+    wire tmp10;
+    wire[3:0] tmp32;
+    wire[3:0] tmp48;
+    wire const_6_1;
+    wire wen;
+    wire tmp41;
+    wire empty_int;
+    wire ren;
+    wire const_2_0;
+    wire tmp9;
+    wire[1:0] raddr;
+    wire[31:0] wdata;
+    wire[31:0] rdata;
+    wire const_11_0;
+
+    reg[31:0] mem_0[3:0];
+
+    assign const_4_0 = 0;
+    assign const_1_0 = 0;
+    assign const_13_0 = 0;
+    assign const_5_0 = 0;
+    assign const_10_1 = 1;
+    assign const_14_0 = 0;
+    assign const_0_0 = 0;
+    assign const_2_0 = 0;
+    assign const_11_0 = 0;
+    assign const_6_1 = 1;
+    assign const_3_0 = 0;
+    assign const_7_0 = 0;
+    assign const_9_0 = 0;
+    assign const_8_0 = 0;
+    assign const_12_0 = 0;
+    assign tmp39 = {write_poitner[1], write_poitner[0]};
+    assign tmp6 = tmp1 & write_poitner;
+    assign tmp32 = {tmp31, const_5_0};
+    assign tmp20 = tmp17 ^ tmp19;
+    assign tmp52 = {write_poitner[1], write_poitner[0]};
+    assign tmp24 = {tmp23[2], tmp23[1], tmp23[0]};
+    assign raddr = tmp52;
+    assign tmp48 = {tmp47, write_poitner};
+    assign tmp3 = {tmp2[0]};
+    assign tmp0 = {const_1_0, const_1_0};
+    assign tmp23 = rd_en_i ? tmp20 : tmp22;
+    assign tmp17 = {tmp16, tmp14, tmp7, const_2_0};
+    assign tmp18 = {const_3_0};
+    assign tmp30 = wr_en_i ? tmp27 : tmp29;
+    assign tmp10 = tmp5 & tmp8;
+    assign tmp1 = {tmp0, const_0_0};
+    assign tmp43 = full_or_empty & empty_int;
+    assign empty_int = tmp37;
+    assign waddr = tmp53;
+    assign tmp51 = ren ? tmp50 : const_13_0;
+    assign tmp21 = {const_4_0};
+    assign tmp4 = {tmp2[1]};
+    assign tmp22 = {tmp21, write_poitner};
+    assign tmp11 = tmp9 | tmp10;
+    assign tmp13 = tmp4 & tmp7;
+    assign empty_o = tmp43;
+    assign tmp14 = tmp8 | tmp13;
+    assign tmp40 = tmp38 == tmp39;
+    assign tmp9 = {tmp6[2]};
+    assign tmp31 = {const_9_0};
+    assign tmp38 = {write_poitner[1], write_poitner[0]};
+    assign tmp35 = {write_poitner[2]};
+    assign tmp2 = tmp1 ^ write_poitner;
+    assign tmp19 = {tmp18, tmp2};
+    assign tmp34 = {tmp33[2], tmp33[1], tmp33[0]};
+    assign tmp53 = {write_poitner[1], write_poitner[0]};
+    assign tmp36 = {write_poitner[2]};
+    assign tmp25 = {const_7_0, const_7_0};
+    always @( posedge clk )
+    begin
+        tmp50 <= mem_0[raddr];
+    end
+    assign tmp33 = reset ? tmp32 : tmp30;
+    assign tmp47 = {const_12_0};
+    assign tmp44 = {const_11_0, const_11_0};
+    assign tmp42 = full_or_empty & tmp41;
+    assign tmp46 = write_poitner + tmp45;
+    assign tmp15 = tmp12 & tmp7;
+    assign tmp54 = rd_en_i ? rdata : const_14_0;
+    assign tmp12 = tmp5 & tmp4;
+    assign full_o = tmp42;
+    assign tmp26 = {tmp25, const_6_1};
+    assign tmp49 = tmp48 == tmp46;
+    assign full_or_empty = tmp40;
+    assign tmp5 = {tmp2[2]};
+    assign rdata = tmp51;
+    assign wen = wr_en_i;
+    assign tmp28 = {const_8_0};
+    assign tmp7 = {tmp6[0]};
+    assign tmp8 = {tmp6[1]};
+    assign tmp45 = {tmp44, const_10_1};
+    assign tmp16 = tmp11 | tmp15;
+    assign tmp41 = ~empty_int;
+    assign ren = rd_en_i;
+    assign rd_data_o = tmp54;
+    assign tmp27 = write_poitner + tmp26;
+    assign wdata = wr_data_i;
+    assign tmp37 = tmp35 == tmp36;
+    assign tmp29 = {tmp28, write_poitner};
+    assign one_left = tmp49;
+
+    always @( posedge clk )
+    begin
+        if (wen) begin
+                mem_0[waddr] <= wdata;
+        end
+        write_poitner <= tmp24;
+        write_poitner <= tmp34;
+    end
+endmodule
+
