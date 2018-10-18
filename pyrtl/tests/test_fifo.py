@@ -61,7 +61,7 @@ def test_fifo_can_read_write():
         })
 
     assert tracer.trace['empty_o'][-1] == 0, 'FIFO empty_o should not be empty after write'
-    assert tracer.trace['full_o'][-1] == 1, 'FIFO should not be full after a read'
+    assert tracer.trace['full_o'][-1] == 1, 'FIFO should not be full in the next cycle'
     assert tracer.trace['rd_data_o'][-1] == 2, 'FIFO should read the correct value'
 
     sim.step({
