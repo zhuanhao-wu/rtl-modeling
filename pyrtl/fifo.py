@@ -50,10 +50,10 @@ class FIFO(object):
 
         self.reset     = pyrtl.Input(1, 'reset')
 
-        self.write_pointer = pyrtl.Register(aw + 1, 'write_poitner')
-        self.read_pointer  = pyrtl.Register(aw + 1, 'write_poitner')
+        self.write_pointer = pyrtl.Register(aw + 1, 'write_pointer')
+        self.read_pointer  = pyrtl.Register(aw + 1, 'read_pointer')
 
-        self.read_plus_1 = pyrtl.rtllib.adders.kogge_stone(pyrtl.Const(0, 1), self.read_pointer)
+        self.read_plus_1 = pyrtl.rtllib.adders.kogge_stone(pyrtl.Const(1, 1), self.read_pointer)
         self.read_pointer.next <<= pyrtl.select(self.rd_en_i, 
                                           truecase=self.read_plus_1,
                                           falsecase=self.read_pointer)
